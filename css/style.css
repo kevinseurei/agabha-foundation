@@ -25,21 +25,21 @@ body {
 /* ===== NAVIGATION - MOBILE FIRST ===== */
 .navbar {
     background-color: var(--white);
-    padding: 8px 0;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    padding: 6px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
 }
 
 .navbar-brand {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 700;
     color: var(--primary-blue);
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .brand-icon {
     color: var(--green);
     margin-right: 4px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .navbar-brand .text-primary {
@@ -47,8 +47,8 @@ body {
 }
 
 .navbar-toggler {
-    padding: 4px 8px;
-    font-size: 0.9rem;
+    padding: 4px 6px;
+    font-size: 0.8rem;
     border: none;
 }
 
@@ -59,8 +59,8 @@ body {
 .nav-link {
     font-weight: 500;
     color: var(--dark-gray) !important;
-    padding: 6px 12px !important;
-    font-size: 0.85rem;
+    padding: 4px 10px !important;
+    font-size: 0.8rem;
 }
 
 .btn-donate {
@@ -68,20 +68,20 @@ body {
     color: var(--white);
     font-weight: 600;
     border: none;
-    font-size: 0.8rem;
-    padding: 6px 16px;
+    font-size: 0.75rem;
+    padding: 5px 14px;
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.3);
 }
 
-/* ===== HERO SECTION - MOBILE FIRST ===== */
+/* ===== HERO SECTION - MOBILE OPTIMIZED ===== */
 .hero-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 92vh;
     background: url('../images/background 1.jpg') center center / cover no-repeat;
     display: flex;
     align-items: center;
-    padding: 60px 0 40px;
+    padding: 20px 0 30px;
 }
 
 .hero-overlay {
@@ -90,172 +90,186 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.2) 100%);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 10px 0;
 }
 
 .hero-text {
     max-width: 100%;
-    padding: 0 5px;
 }
 
 .hero-badge {
     display: inline-block;
     background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     color: #ffffff;
-    padding: 5px 14px;
+    padding: 4px 12px;
     border-radius: 50px;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
 }
 
 .hero-text h1 {
     color: #ffffff;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-    font-size: 1.8rem;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    font-size: 1.6rem;
+    line-height: 1.15;
+    margin-bottom: 6px;
 }
 
 .hero-text .text-primary {
-    color: #6b9cdf !important;
+    color: #7aadff !important;
 }
 
 .hero-text p {
     color: rgba(255,255,255,0.9);
-    font-size: 0.85rem;
-    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
-    line-height: 1.6;
-    margin-bottom: 15px;
+    font-size: 0.75rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
 .hero-text .btn {
-    font-size: 0.8rem;
-    padding: 8px 20px;
+    font-size: 0.7rem;
+    padding: 6px 16px;
     border-radius: 50px;
 }
 
 .hero-text .btn-donate {
     background: var(--green);
     color: var(--white);
-    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.4);
 }
 
 .hero-text .btn-outline-light {
-    border-color: rgba(255,255,255,0.4);
+    border-color: rgba(255,255,255,0.3);
     color: #ffffff;
+    font-size: 0.7rem;
+    padding: 6px 16px;
 }
 
-/* ===== ABOUT SECTION - MOBILE FIRST ===== */
+/* ===== ABOUT SECTION - MOBILE OPTIMIZED ===== */
 .about-section {
-    padding: 40px 0;
+    padding: 25px 0;
     background: #ffffff;
 }
 
 .about-section .badge {
-    font-size: 0.7rem;
-    padding: 5px 14px;
+    font-size: 0.6rem;
+    padding: 4px 12px;
 }
 
 .about-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.2;
+    margin-top: 4px !important;
+}
+
+.about-section .lead {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
 }
 
 .about-section p {
-    font-size: 0.85rem;
-    line-height: 1.8;
+    font-size: 0.75rem;
+    line-height: 1.6;
     color: #555;
+    margin-bottom: 4px;
 }
 
 .about-image-wrapper {
     background: #e8edf5;
-    padding: 5px;
-    border-radius: 16px !important;
-    box-shadow: 0 10px 40px rgba(26, 60, 138, 0.1);
+    padding: 4px;
+    border-radius: 14px !important;
+    box-shadow: 0 8px 30px rgba(26, 60, 138, 0.08);
 }
 
 .about-image-wrapper img {
-    height: 200px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
     width: 100%;
 }
 
-/* ===== STATS SECTION - MOBILE FIRST ===== */
+.about-section .btn {
+    font-size: 0.75rem;
+    padding: 6px 18px;
+    border-radius: 50px;
+}
+
+/* ===== STATS SECTION - MOBILE OPTIMIZED ===== */
 .stats-section {
     background: var(--light-gray);
-    padding: 30px 0 40px;
+    padding: 15px 0 20px;
 }
 
 .stat-card {
     background: var(--white);
     border: 1px solid rgba(0,0,0,0.04);
-    padding: 15px 10px;
-    border-radius: 16px !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-    transition: all 0.3s ease;
+    padding: 10px 6px;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .stat-card i {
-    font-size: 1.8rem !important;
-    margin-bottom: 8px;
+    font-size: 1.3rem !important;
+    margin-bottom: 2px;
 }
 
 .stat-card h2 {
     font-weight: 800;
     color: var(--primary-blue);
-    font-size: 1.6rem;
-    margin-bottom: 2px;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    line-height: 1.1;
 }
 
 .stat-card p {
     color: #666;
     font-weight: 500;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin-bottom: 0;
+    line-height: 1.1;
 }
 
-/* ===== PROJECTS SECTION - MOBILE FIRST ===== */
+/* ===== PROJECTS SECTION - MOBILE OPTIMIZED ===== */
 .projects-section {
     background: var(--white);
-    padding: 40px 0;
+    padding: 25px 0;
 }
 
 .projects-section .badge {
-    font-size: 0.7rem;
-    padding: 5px 14px;
+    font-size: 0.6rem;
+    padding: 4px 12px;
 }
 
 .projects-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
+    margin-top: 2px;
 }
 
 .project-card {
     background: var(--white);
     border: 1px solid rgba(0,0,0,0.06);
-    padding: 15px 12px 20px;
-    border-radius: 16px !important;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    padding: 12px 10px 15px;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .project-img-wrapper {
-    height: 150px;
+    height: 120px;
     background: #e8edf5;
-    border-radius: 12px !important;
+    border-radius: 10px !important;
     overflow: hidden;
 }
 
@@ -266,349 +280,388 @@ body {
 }
 
 .project-card i {
-    font-size: 1.6rem !important;
-    margin-bottom: 5px;
+    font-size: 1.3rem !important;
+    margin-bottom: 2px;
 }
 
 .project-card h4 {
-    font-size: 1.05rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .project-card p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.4;
+    margin-bottom: 6px;
 }
 
 .project-card .btn {
-    font-size: 0.75rem;
-    padding: 5px 16px;
+    font-size: 0.65rem;
+    padding: 4px 14px;
     border-radius: 50px;
 }
 
-/* ===== EVENTS SECTION - MOBILE FIRST ===== */
+/* ===== EVENTS SECTION - MOBILE OPTIMIZED ===== */
 .events-section {
     background: var(--light-gray);
-    padding: 40px 0;
+    padding: 25px 0;
 }
 
 .events-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 
 .event-card {
     background: var(--white);
     border: 1px solid rgba(0,0,0,0.04);
-    padding: 15px !important;
-    border-radius: 16px !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    padding: 12px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .event-card .badge {
-    font-size: 0.7rem;
-    padding: 4px 12px;
+    font-size: 0.6rem;
+    padding: 3px 10px;
 }
 
 .event-card h5 {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .event-card p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #666;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
-/* ===== VOLUNTEER SECTION - MOBILE FIRST ===== */
+.events-section .btn {
+    font-size: 0.75rem;
+    padding: 6px 18px;
+}
+
+/* ===== VOLUNTEER SECTION - MOBILE OPTIMIZED ===== */
 .volunteer-section {
     background: linear-gradient(135deg, #f0f4f8 0%, #e8edf5 100%);
-    padding: 40px 0;
+    padding: 25px 0;
 }
 
 .volunteer-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 
 .volunteer-section .lead {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #555;
+    margin-bottom: 6px;
 }
 
 .volunteer-section .btn-success {
     background: var(--green);
     border: none;
-    font-size: 0.85rem;
-    padding: 10px 28px;
+    font-size: 0.75rem;
+    padding: 7px 22px;
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    box-shadow: 0 3px 12px rgba(46, 125, 50, 0.3);
 }
 
 .volunteer-section i {
-    font-size: 1.6rem !important;
+    font-size: 1.3rem !important;
 }
 
 .volunteer-section h5 {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 600;
+    margin-top: 2px;
 }
 
-/* ===== DONATION SECTION - MOBILE FIRST ===== */
+/* ===== DONATION SECTION - MOBILE OPTIMIZED ===== */
 .donation-section {
     background: var(--primary-blue);
-    padding: 40px 0;
+    padding: 25px 0;
 }
 
 .donation-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 
 .donation-section .lead {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     opacity: 0.9;
+    margin-bottom: 0;
 }
 
 .donation-card {
     background: var(--white);
-    padding: 18px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .donation-card i {
-    font-size: 1.8rem !important;
+    font-size: 1.4rem !important;
 }
 
 .donation-card h4 {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     font-weight: 700;
+    margin-bottom: 2px;
 }
 
 .donation-card .fs-3 {
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
     font-weight: 700;
     color: var(--primary-blue);
+    margin-bottom: 0;
 }
 
 .donation-card p {
-    font-size: 0.85rem;
-    margin-bottom: 5px;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
 }
 
 .donation-card .btn-primary {
     background: var(--primary-blue);
     border: none;
-    padding: 8px 25px;
-    font-size: 0.85rem;
+    padding: 6px 20px;
+    font-size: 0.75rem;
     border-radius: 50px;
 }
 
-/* ===== CONTACT SECTION - MOBILE FIRST ===== */
+/* ===== CONTACT SECTION - MOBILE OPTIMIZED ===== */
 .contact-section {
-    padding: 40px 0;
+    padding: 25px 0;
     background: var(--white);
 }
 
 .contact-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 
 .contact-section ul li {
-    font-size: 0.85rem;
-    margin-bottom: 12px;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
 }
 
 .contact-section ul li i {
-    font-size: 1.5rem !important;
-    width: 30px;
+    font-size: 1.2rem !important;
+    width: 24px;
 }
 
 .contact-section form {
-    padding: 18px !important;
-    border-radius: 16px !important;
+    padding: 12px !important;
+    border-radius: 14px !important;
     background: var(--light-gray) !important;
 }
 
 .contact-section .form-control {
-    font-size: 0.85rem;
-    padding: 10px 16px;
+    font-size: 0.75rem;
+    padding: 6px 12px;
     border-radius: 50px !important;
     border: 1px solid #e0e0e0;
+    height: 36px;
 }
 
 .contact-section textarea.form-control {
-    border-radius: 16px !important;
-    min-height: 100px;
+    border-radius: 12px !important;
+    min-height: 70px;
+    height: auto;
 }
 
 .contact-section .btn-primary {
     background: var(--primary-blue);
     border: none;
-    padding: 10px 30px;
-    font-size: 0.85rem;
+    padding: 6px 22px;
+    font-size: 0.75rem;
     border-radius: 50px;
 }
 
-/* ===== FOOTER - MOBILE FIRST ===== */
+/* ===== FOOTER - MOBILE OPTIMIZED ===== */
 .footer-section {
     background: #1a1a2e;
-    padding: 30px 0 15px;
+    padding: 20px 0 10px;
 }
 
 .footer-section h5 {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 700;
 }
 
 .footer-section h6 {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
 .footer-section p,
 .footer-section li {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: rgba(255,255,255,0.7);
+    line-height: 1.3;
 }
 
 .footer-section li {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .footer-section a {
     color: rgba(255,255,255,0.7);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .footer-section .social-icons {
-    gap: 12px;
-    font-size: 1.2rem;
+    gap: 8px;
+    font-size: 1rem;
 }
 
-/* ===== MODAL - MOBILE FIRST ===== */
+.footer-section hr {
+    margin: 10px 0;
+}
+
+/* ===== MODAL - MOBILE OPTIMIZED ===== */
 .modal-content {
-    border-radius: 20px !important;
-    margin: 10px;
+    border-radius: 16px !important;
+    margin: 8px;
 }
 
 .modal-header {
-    padding: 15px 20px 5px;
+    padding: 12px 16px 4px;
 }
 
 .modal-header h4 {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .modal-body {
-    padding: 10px 20px 20px;
+    padding: 8px 16px 16px;
 }
 
 .modal-body img {
-    border-radius: 12px;
-    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .modal-body h5 {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
 .modal-body p {
-    font-size: 0.85rem;
-    line-height: 1.7;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
 }
 
 .modal-body ul {
-    padding-left: 18px;
+    padding-left: 16px;
+    margin-bottom: 6px;
 }
 
 .modal-body ul li {
-    font-size: 0.85rem;
-    margin-bottom: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
 }
 
 .modal-footer {
-    padding: 10px 20px 20px;
-    gap: 8px;
+    padding: 8px 16px 16px;
+    gap: 6px;
 }
 
 .modal-footer .btn {
-    font-size: 0.8rem;
-    padding: 8px 20px;
+    font-size: 0.7rem;
+    padding: 5px 16px;
     border-radius: 50px;
 }
 
-/* ===== TABLET & DESKTOP UPGRADES ===== */
+/* ===== TABLET & DESKTOP ===== */
 @media (min-width: 768px) {
     .navbar-brand {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .hero-text h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     
     .hero-text p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .hero-text .btn {
-        font-size: 0.9rem;
-        padding: 10px 28px;
+        font-size: 0.85rem;
+        padding: 8px 24px;
+    }
+    
+    .about-section {
+        padding: 40px 0;
     }
     
     .about-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .about-image-wrapper img {
-        height: 280px;
+        height: 250px;
     }
     
     .stat-card h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+    
+    .stat-card i {
+        font-size: 1.8rem !important;
+    }
+    
+    .projects-section {
+        padding: 40px 0;
     }
     
     .projects-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .project-img-wrapper {
-        height: 180px;
+        height: 160px;
+    }
+    
+    .volunteer-section {
+        padding: 40px 0;
     }
     
     .volunteer-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .donation-section {
+        padding: 40px 0;
     }
     
     .donation-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .contact-section {
+        padding: 40px 0;
     }
     
     .contact-section h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
 
 @media (min-width: 992px) {
     .hero-text h1 {
-        font-size: 4rem;
-    }
-    
-    .hero-text p {
-        font-size: 1.1rem;
+        font-size: 3.8rem;
     }
     
     .about-image-wrapper img {
-        height: 380px;
+        height: 350px;
     }
     
     .stat-card h2 {
@@ -625,16 +678,62 @@ body {
         font-size: 4.5rem;
     }
     
-    .hero-text p {
-        font-size: 1.2rem;
-    }
-    
     .about-image-wrapper img {
         height: 450px;
     }
     
     .stat-card h2 {
         font-size: 2.8rem;
+    }
+}
+
+/* ===== MOBILE SCREEN SIZE INDICATOR ===== */
+/* This shows the screen width in the corner (optional, remove later) */
+@media (max-width: 767px) {
+    body::after {
+        content: "📱 Mobile";
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.5rem;
+        z-index: 9999;
+        opacity: 0.6;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body::after {
+        content: "📱 Tablet";
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.5rem;
+        z-index: 9999;
+        opacity: 0.6;
+    }
+}
+
+@media (min-width: 992px) {
+    body::after {
+        content: "💻 Desktop";
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.5rem;
+        z-index: 9999;
+        opacity: 0.6;
     }
 }
 
@@ -648,52 +747,56 @@ body {
 }
 
 .rounded-4 {
-    border-radius: 16px !important;
+    border-radius: 14px !important;
 }
 
 .shadow-sm {
-    box-shadow: 0 2px 15px rgba(0,0,0,0.06) !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
 }
 
-.gap-3 {
-    gap: 10px !important;
+.gap-2 {
+    gap: 6px !important;
 }
 
 .lead {
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 400;
 }
 
-/* Fix for small screens */
+/* Fix for extra small screens */
 @media (max-width: 575px) {
     .container {
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
     .row {
-        margin-left: -6px;
-        margin-right: -6px;
+        margin-left: -4px;
+        margin-right: -4px;
     }
     
     .col-6 {
-        padding-left: 6px;
-        padding-right: 6px;
+        padding-left: 4px;
+        padding-right: 4px;
     }
     
     .col-md-4,
     .col-md-5,
     .col-md-7 {
-        padding-left: 6px;
-        padding-right: 6px;
+        padding-left: 4px;
+        padding-right: 4px;
     }
     
     .hero-text .d-flex {
-        gap: 8px !important;
+        gap: 6px !important;
     }
     
     .hero-text .btn {
-        font-size: 0.75rem;
-        padding: 7px 16px;
+        font-size: 0.65rem;
+        padding: 5px 14px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.4rem;
     }
 }
