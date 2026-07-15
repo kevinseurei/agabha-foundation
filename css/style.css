@@ -663,4 +663,15 @@ a { text-decoration: none; }
   .footer-section .row > div {
     margin-bottom: 1.5rem;
   }
+  /* ===== COPY TOAST ANIMATION ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
 }
