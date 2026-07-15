@@ -334,8 +334,9 @@
                 <div class="col-md-5">
                     <div class="donation-card">
                         <i class="fas fa-university text-primary"></i>
-                        <h4>KCB Bank</h4>
+                        <h4>KCB Bank - Eldoret</h4>
                         <p class="fw-bold">AGABHA HOPE LADIES FOUNDATION</p>
+                        <p><span class="fw-bold">Account:</span> 1353959228</p>
                         <a href="#" class="btn btn-primary rounded-pill px-5 mt-3" data-bs-toggle="modal" data-bs-target="#donateModal">Donate Now</a>
                     </div>
                 </div>
@@ -453,8 +454,9 @@
                     <div class="card border-primary">
                         <div class="card-body">
                             <h6 class="fw-bold"><i class="fas fa-university text-primary me-2"></i> Bank Transfer</h6>
-                            <p><strong>Bank:</strong> KCB Bank</p>
+                            <p><strong>Bank:</strong> KCB Bank - Eldoret Branch</p>
                             <p><strong>Account Name:</strong> AGABHA HOPE LADIES FOUNDATION</p>
+                            <p><strong>Account Number:</strong> 1353959228</p>
                             <p><small class="text-muted">International transfers accepted.</small></p>
                         </div>
                     </div>
@@ -508,7 +510,6 @@
             const actionButtons = document.querySelectorAll('.modal-action-btn');
             actionButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
-                    // If the button has data-bs-toggle="modal", let Bootstrap handle it
                     if (this.getAttribute('data-bs-toggle') === 'modal') {
                         return;
                     }
@@ -547,6 +548,32 @@
                     this.reset();
                 });
             }
+
+            // ===== VIEW ALL EVENTS =====
+            const viewAllBtn = document.querySelector('.events-section .btn-outline-primary');
+            if (viewAllBtn) {
+                viewAllBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const eventsSection = document.querySelector('.events-section');
+                    if (eventsSection) {
+                        const navHeight = document.querySelector('.navbar').offsetHeight;
+                        const targetPosition = eventsSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+
+            // ===== VOLUNTEER BUTTONS =====
+            const volunteerBtns = document.querySelectorAll('.volunteer-section .btn-success');
+            volunteerBtns.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('🙏 Thank you for your interest in volunteering!\n\n📞 Call us: 0720445393\n📧 Email: heleatita@gmail.com\n\nWe\'ll get back to you with more information.');
+                });
+            });
         });
     </script>
 </body>
