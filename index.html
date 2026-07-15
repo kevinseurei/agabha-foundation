@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGABHA HOPE LADIES FOUNDATION</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -315,7 +315,7 @@
         </div>
     </section>
 
-    <!-- ===== DONATION SECTION ===== -->
+    <!-- ===== DONATION SECTION - IMPROVED ===== -->
     <section id="donate" class="donation-section">
         <div class="container">
             <div class="text-center mb-5">
@@ -323,21 +323,43 @@
                 <p class="lead text-white-50">Your generosity changes lives. Every contribution counts.</p>
             </div>
             <div class="row g-4 justify-content-center">
+                <!-- M-Pesa Card -->
                 <div class="col-md-5">
-                    <div class="donation-card">
-                        <i class="fas fa-mobile-alt text-primary"></i>
-                        <h4>M-Pesa Paybill</h4>
-                        <p class="fs-3 fw-bold">522533</p>
-                        <p><span class="fw-bold">Account:</span> 8114218</p>
+                    <div class="donation-card text-center p-4">
+                        <div class="donation-icon-wrapper mb-3">
+                            <img src="images/mpesa-logo.png" alt="M-Pesa" class="donation-logo" height="60">
+                        </div>
+                        <h4 class="fw-bold">M-Pesa Paybill</h4>
+                        <div class="donation-details">
+                            <p class="mb-1"><span class="text-muted">Paybill Number:</span></p>
+                            <p class="fs-2 fw-bold text-primary">522533</p>
+                            <p class="mb-1"><span class="text-muted">Account Number:</span></p>
+                            <p class="fs-4 fw-bold">8114218</p>
+                        </div>
+                        <p class="text-muted small mt-3">Send via M-Pesa and we'll confirm receipt.</p>
+                        <button class="btn btn-success rounded-pill px-5 mt-2" data-bs-toggle="modal" data-bs-target="#donateModal">
+                            <i class="fas fa-hand-holding-heart me-2"></i>Donate via M-Pesa
+                        </button>
                     </div>
                 </div>
+
+                <!-- KCB Bank Card -->
                 <div class="col-md-5">
-                    <div class="donation-card">
-                        <i class="fas fa-university text-primary"></i>
-                        <h4>KCB Bank - Eldoret</h4>
-                        <p class="fw-bold">AGABHA HOPE LADIES FOUNDATION</p>
-                        <p><span class="fw-bold">Account:</span> 1353959228</p>
-                        <a href="#" class="btn btn-primary rounded-pill px-5 mt-3" data-bs-toggle="modal" data-bs-target="#donateModal">Donate Now</a>
+                    <div class="donation-card text-center p-4">
+                        <div class="donation-icon-wrapper mb-3">
+                            <img src="images/kcb-logo.png" alt="KCB Bank" class="donation-logo" height="60">
+                        </div>
+                        <h4 class="fw-bold">KCB Bank - Eldoret</h4>
+                        <div class="donation-details">
+                            <p class="mb-1"><span class="text-muted">Account Name:</span></p>
+                            <p class="fw-bold">AGABHA HOPE LADIES FOUNDATION</p>
+                            <p class="mb-1"><span class="text-muted">Account Number:</span></p>
+                            <p class="fs-4 fw-bold text-primary">1353959228</p>
+                        </div>
+                        <p class="text-muted small mt-3">International transfers accepted.</p>
+                        <button class="btn btn-primary rounded-pill px-5 mt-2" data-bs-toggle="modal" data-bs-target="#donateModal">
+                            <i class="fas fa-university me-2"></i>Donate via Bank
+                        </button>
                     </div>
                 </div>
             </div>
@@ -358,7 +380,6 @@
                     </ul>
                 </div>
                 <div class="col-md-7">
-                    <!-- Contact Form with Formspree -->
                     <form class="p-4 bg-light rounded-4" id="contactForm" action="https://formspree.io/f/mkodooyd" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -539,18 +560,6 @@
                     }, 300);
                 });
             });
-
-            // ===== CONTACT FORM - Formspree handles submission =====
-            // Formspree will redirect to a success page by default.
-            // We can optionally handle the submit event for custom behavior.
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    // Formspree will handle the submission.
-                    // You can add a loading state here if needed.
-                    console.log('Form submitted to Formspree');
-                });
-            }
 
             // ===== VIEW ALL EVENTS =====
             const viewAllBtn = document.querySelector('.events-section .btn-outline-primary');
