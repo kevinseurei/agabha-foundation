@@ -332,9 +332,19 @@
                         <h4 class="fw-bold">M-Pesa Paybill</h4>
                         <div class="donation-details">
                             <p class="mb-1"><span class="text-muted">Paybill Number:</span></p>
-                            <p class="fs-2 fw-bold text-primary">522533</p>
-                            <p class="mb-1"><span class="text-muted">Account Number:</span></p>
-                            <p class="fs-4 fw-bold">8114218</p>
+                            <div class="copy-container">
+                                <span class="fs-2 fw-bold text-primary">522533</span>
+                                <button class="btn btn-sm btn-outline-success copy-btn" data-copy="522533">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <p class="mb-1 mt-3"><span class="text-muted">Account Number:</span></p>
+                            <div class="copy-container">
+                                <span class="fs-4 fw-bold">8114218</span>
+                                <button class="btn btn-sm btn-outline-success copy-btn" data-copy="8114218">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
                         </div>
                         <p class="text-muted small mt-3">Send via M-Pesa and we'll confirm receipt.</p>
                         <button class="btn btn-success rounded-pill px-5 mt-2" data-bs-toggle="modal" data-bs-target="#donateModal">
@@ -354,7 +364,12 @@
                             <p class="mb-1"><span class="text-muted">Account Name:</span></p>
                             <p class="fw-bold">AGABHA HOPE LADIES FOUNDATION</p>
                             <p class="mb-1"><span class="text-muted">Account Number:</span></p>
-                            <p class="fs-4 fw-bold text-primary">1353959228</p>
+                            <div class="copy-container">
+                                <span class="fs-4 fw-bold text-primary">1353959228</span>
+                                <button class="btn btn-sm btn-outline-primary copy-btn" data-copy="1353959228">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
                         </div>
                         <p class="text-muted small mt-3">International transfers accepted.</p>
                         <button class="btn btn-primary rounded-pill px-5 mt-2" data-bs-toggle="modal" data-bs-target="#donateModal">
@@ -447,39 +462,73 @@
         </div>
     </footer>
 
-    <!-- ===== DONATION MODAL ===== -->
+    <!-- ===== DONATION MODAL - IMPROVED WITH COPY FEATURE ===== -->
     <div class="modal fade" id="donateModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h4 class="fw-bold text-success">Make a Donation</h4>
+                    <h4 class="fw-bold text-success"><i class="fas fa-hand-holding-heart me-2"></i>Make a Donation</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="text-center mb-4">
-                        <i class="fas fa-hand-holding-heart text-success" style="font-size: 3rem;"></i>
+                        <i class="fas fa-heart text-danger" style="font-size: 3rem;"></i>
                         <h5 class="mt-3">Thank you for your generosity!</h5>
-                        <p class="text-muted">Choose your preferred payment method below:</p>
+                        <p class="text-muted">Choose your preferred payment method and copy the details below:</p>
                     </div>
                     
-                    <!-- M-Pesa -->
-                    <div class="card mb-3 border-success">
-                        <div class="card-body">
-                            <h6 class="fw-bold"><i class="fas fa-mobile-alt text-success me-2"></i> M-Pesa Paybill</h6>
-                            <p><strong>Paybill Number:</strong> 522533</p>
-                            <p><strong>Account Number:</strong> 8114218</p>
-                            <p><small class="text-muted">Send via M-Pesa and we'll confirm receipt.</small></p>
+                    <div class="row g-4">
+                        <!-- M-Pesa in Modal -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-success">
+                                <div class="card-body text-center">
+                                    <img src="images/mpesa-logo.png" alt="M-Pesa" height="40" class="mb-3">
+                                    <h5 class="fw-bold text-success">M-Pesa Paybill</h5>
+                                    <div class="payment-detail">
+                                        <p class="mb-1"><small class="text-muted">Paybill Number</small></p>
+                                        <div class="copy-container justify-content-center">
+                                            <span class="fs-3 fw-bold">522533</span>
+                                            <button class="btn btn-sm btn-outline-success copy-btn" data-copy="522533">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="payment-detail mt-3">
+                                        <p class="mb-1"><small class="text-muted">Account Number</small></p>
+                                        <div class="copy-container justify-content-center">
+                                            <span class="fs-4 fw-bold">8114218</span>
+                                            <button class="btn btn-sm btn-outline-success copy-btn" data-copy="8114218">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted small mt-3">Send via M-Pesa and we'll confirm receipt.</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- Bank -->
-                    <div class="card border-primary">
-                        <div class="card-body">
-                            <h6 class="fw-bold"><i class="fas fa-university text-primary me-2"></i> Bank Transfer</h6>
-                            <p><strong>Bank:</strong> KCB Bank - Eldoret Branch</p>
-                            <p><strong>Account Name:</strong> AGABHA HOPE LADIES FOUNDATION</p>
-                            <p><strong>Account Number:</strong> 1353959228</p>
-                            <p><small class="text-muted">International transfers accepted.</small></p>
+
+                        <!-- KCB in Modal -->
+                        <div class="col-md-6">
+                            <div class="card h-100 border-primary">
+                                <div class="card-body text-center">
+                                    <img src="images/kcb-logo.png" alt="KCB Bank" height="40" class="mb-3">
+                                    <h5 class="fw-bold text-primary">KCB Bank - Eldoret</h5>
+                                    <div class="payment-detail">
+                                        <p class="mb-1"><small class="text-muted">Account Name</small></p>
+                                        <p class="fw-bold">AGABHA HOPE LADIES FOUNDATION</p>
+                                    </div>
+                                    <div class="payment-detail mt-3">
+                                        <p class="mb-1"><small class="text-muted">Account Number</small></p>
+                                        <div class="copy-container justify-content-center">
+                                            <span class="fs-4 fw-bold">1353959228</span>
+                                            <button class="btn btn-sm btn-outline-primary copy-btn" data-copy="1353959228">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted small mt-3">International transfers accepted.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -523,10 +572,52 @@
             });
         }
 
+        // ===== COPY TO CLIPBOARD FUNCTION =====
+        function copyToClipboard(text, button) {
+            // Create temporary input
+            const input = document.createElement('input');
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            
+            try {
+                document.execCommand('copy');
+                // Show feedback
+                const originalHtml = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check text-success"></i>';
+                button.classList.add('btn-success');
+                button.classList.remove('btn-outline-success', 'btn-outline-primary');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalHtml;
+                    button.classList.remove('btn-success');
+                    button.classList.add('btn-outline-success');
+                }, 2000);
+            } catch (err) {
+                alert('Failed to copy. Please select and copy manually.');
+            }
+            
+            document.body.removeChild(input);
+        }
+
+        // ===== SETUP COPY BUTTONS =====
+        function setupCopyButtons() {
+            document.querySelectorAll('.copy-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const textToCopy = this.getAttribute('data-copy');
+                    copyToClipboard(textToCopy, this);
+                });
+            });
+        }
+
         // ===== MODAL ACTION HANDLER =====
         document.addEventListener('DOMContentLoaded', function() {
             // Load events
             loadEvents();
+            
+            // Setup copy buttons
+            setupCopyButtons();
 
             // Handle modal action buttons
             const actionButtons = document.querySelectorAll('.modal-action-btn');

@@ -599,4 +599,71 @@ a { text-decoration: none; }
         font-size: 1.2rem !important;
     }
 }
+/* ===== COPY TO CLIPBOARD ===== */
+.copy-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.copy-container .fs-2,
+.copy-container .fs-3,
+.copy-container .fs-4 {
+    margin-bottom: 0;
+}
+
+.copy-btn {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    transform: scale(1.1);
+}
+
+.payment-detail {
+    background: var(--color-cream);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem;
+}
+
+/* ===== DONATION MODAL IMPROVEMENTS ===== */
+#donateModal .modal-content {
+    border-radius: var(--radius-lg);
+}
+
+#donateModal .card {
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease;
+}
+
+#donateModal .card:hover {
+    transform: translateY(-4px);
+}
+
+#donateModal .card-body {
+    padding: 1.5rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 767.98px) {
+    .copy-container .fs-3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .copy-container .fs-4 {
+        font-size: 1.2rem !important;
+    }
+    
+    #donateModal .col-md-6 {
+        margin-bottom: 1rem;
+    }
+}
 }
