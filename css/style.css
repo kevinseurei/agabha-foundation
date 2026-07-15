@@ -167,7 +167,7 @@ a { text-decoration: none; }
 /* ---------- Hero ---------- */
 .hero-section {
   position: relative;
-  background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1600&h=1000&fit=crop') center/cover no-repeat;
+  background: url('../images/hero-background.jfif') center/cover no-repeat;
   padding: 6rem 0 8rem;
   min-height: 480px;
   display: flex;
@@ -256,6 +256,7 @@ a { text-decoration: none; }
 .about-image-wrapper img {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
+  width: 100%;
 }
 
 /* ---------- Projects / Programs ---------- */
@@ -324,6 +325,11 @@ a { text-decoration: none; }
   border: none;
 }
 
+.modal-body img {
+  width: 100%;
+  object-fit: cover;
+}
+
 /* ---------- Events ---------- */
 .events-section {
   padding: 3rem 0;
@@ -357,7 +363,7 @@ a { text-decoration: none; }
   position: relative;
   padding: 4rem 0;
   background: linear-gradient(120deg, rgba(20,40,75,0.93), rgba(20,40,75,0.8)),
-              url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=1400&h=800&fit=crop') center/cover no-repeat;
+              url('../images/volunteer-bg.jfif') center/cover no-repeat;
 }
 
 .volunteer-section h2,
@@ -380,6 +386,7 @@ a { text-decoration: none; }
 /* ---------- Donation ---------- */
 .donation-section {
   padding: 4rem 0;
+  background: var(--color-navy);
 }
 
 .donation-card {
@@ -496,6 +503,31 @@ a { text-decoration: none; }
 
 @media (max-width: 575.98px) {
   .hero-text h1 { font-size: 1.7rem; }
+  .hero-text p { font-size: 0.9rem; }
   .stats-section .row > div { margin-bottom: 1rem; }
   .stats-section .row > div:last-child { margin-bottom: 0; }
+  
+  .project-img-wrapper {
+    height: 150px;
+  }
+  
+  .project-card h4 {
+    font-size: 1rem;
+  }
+  
+  .project-card p {
+    font-size: 0.8rem;
+  }
+  
+  .event-card {
+    padding: 1rem;
+  }
+  
+  .donation-card {
+    padding: 1.5rem;
+  }
+  
+  .footer-section .row > div {
+    margin-bottom: 1.5rem;
+  }
 }
