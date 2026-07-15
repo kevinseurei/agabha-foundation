@@ -315,7 +315,7 @@
         </div>
     </section>
 
-    <!-- ===== DONATION SECTION - IMPROVED ===== -->
+    <!-- ===== DONATION SECTION ===== -->
     <section id="donate" class="donation-section">
         <div class="container">
             <div class="text-center mb-5">
@@ -462,7 +462,7 @@
         </div>
     </footer>
 
-    <!-- ===== DONATION MODAL - IMPROVED WITH COPY FEATURE ===== -->
+    <!-- ===== DONATION MODAL ===== -->
     <div class="modal fade" id="donateModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -572,43 +572,85 @@
             });
         }
 
-        // ===== COPY TO CLIPBOARD FUNCTION =====
+        // ===== COPY TO CLIPBOARD =====
         function copyToClipboard(text, button) {
             // Create temporary input
             const input = document.createElement('input');
             input.value = text;
             document.body.appendChild(input);
             input.select();
+            input.setSelectionRange(0, 99999);
             
             try {
-                document.execCommand('copy');
-                // Show feedback
-                const originalHtml = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check text-success"></i>';
-                button.classList.add('btn-success');
-                button.classList.remove('btn-outline-success', 'btn-outline-primary');
-                
-                setTimeout(() => {
-                    button.innerHTML = originalHtml;
-                    button.classList.remove('btn-success');
-                    button.classList.add('btn-outline-success');
-                }, 2000);
+                const success = document.execCommand('copy');
+                if (success) {
+                    // Show success feedback
+                    const originalHtml = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-check text-success"></i>';
+                    button.classList.add('btn-success');
+                    button.classList.remove('btn-outline-success', 'btn-outline-primary');
+                    
+                    // Show toast notification
+                    showToast('✅ Copied!', '#2E7D32');
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalHtml;
+                        button.classList.remove('btn-success');
+                        button.classList.add('btn-outline-success');
+                    }, 2000);
+                } else {
+                    showToast('❌ Failed to copy. Please copy manually.', '#D32F2F');
+                }
             } catch (err) {
-                alert('Failed to copy. Please select and copy manually.');
+                showToast('❌ Failed to copy. Please copy manually.', '#D32F2F');
             }
             
             document.body.removeChild(input);
         }
 
+        // ===== SHOW TOAST NOTIFICATION =====
+        function showToast(message, bgColor) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${bgColor};
+                color: white;
+                padding: 12px 30px;
+                border-radius: 30px;
+                font-size: 1rem;
+                z-index: 9999;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                animation: slideUp 0.4s ease;
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 300);
+            }, 2500);
+        }
+
         // ===== SETUP COPY BUTTONS =====
         function setupCopyButtons() {
             document.querySelectorAll('.copy-btn').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const textToCopy = this.getAttribute('data-copy');
-                    copyToClipboard(textToCopy, this);
-                });
+                button.removeEventListener('click', copyHandler);
+                button.addEventListener('click', copyHandler);
             });
+        }
+
+        function copyHandler(e) {
+            e.preventDefault();
+            const text = this.getAttribute('data-copy');
+            copyToClipboard(text, this);
         }
 
         // ===== MODAL ACTION HANDLER =====
@@ -677,7 +719,31 @@
                     alert('🙏 Thank you for your interest in volunteering!\n\n📞 Call us: 0720445393\n📧 Email: heleatita@gmail.com\n\nWe\'ll get back to you with more information.');
                 });
             });
+
+            // ===== RE-SETUP COPY BUTTONS AFTER MODAL OPENS =====
+            const donateModal = document.getElementById('donateModal');
+            if (donateModal) {
+                donateModal.addEventListener('shown.bs.modal', function() {
+                    setupCopyButtons();
+                });
+            }
         });
+
+        // ===== ADD CSS ANIMATION =====
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = `
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50%) translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(-50%) translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
