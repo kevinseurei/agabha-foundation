@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Font: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Poppins + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -45,13 +45,49 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="row align-items-center">
-                <div class="col-12 hero-text">
+                <div class="col-lg-7 hero-text">
                     <span class="hero-badge">TOGETHER WE CAN</span>
-                    <h1 class="fw-bold">Giving Hope,<br>Restoring Dignity,<br><span class="text-primary">Transforming Lives</span></h1>
+                    <h1 class="fw-bold">Giving Hope,<br>Restoring Dignity,<br><span class="text-success">Transforming Lives</span></h1>
                     <p>Empowering girls through reusable sanitary towels, mentorship, and Christian love.</p>
-                    <div class="d-flex flex-wrap gap-2">
+                    <div class="d-flex flex-wrap gap-3">
                         <a href="#donate" class="btn btn-donate"><i class="fas fa-hand-holding-heart me-2"></i>Donate Now</a>
                         <a href="#about" class="btn btn-outline-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS SECTION (floating over hero) ===== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-female text-success"></i>
+                        <h2 class="fw-bold">2000+</h2>
+                        <p>Girls Supported</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-school text-success"></i>
+                        <h2 class="fw-bold">50+</h2>
+                        <p>Schools Reached</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-users text-success"></i>
+                        <h2 class="fw-bold">30+</h2>
+                        <p>Volunteers</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <i class="fas fa-map-pin text-success"></i>
+                        <h2 class="fw-bold">100+</h2>
+                        <p>Community Visits</p>
                     </div>
                 </div>
             </div>
@@ -61,25 +97,25 @@
     <!-- ===== ABOUT SECTION ===== -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="row align-items-center g-4">
+            <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">About Us</span>
-                    <h2 class="fw-bold mt-2">Together We Can Make a Difference</h2>
+                    <h2 class="fw-bold mt-3">Together We Can Make a Difference</h2>
                     <p class="lead">We are dedicated to bringing hope, support, and opportunities to communities in need.</p>
                     <p>AGABHA HOPE LADIES FOUNDATION is a Christian non-profit organization committed to empowering girls and women through education, mentorship, and sustainable development programs.</p>
-                    <div class="row mt-3 g-2">
-                        <div class="col-6">
+                    <div class="row mt-4 g-3">
+                        <div class="col-md-6">
                             <div class="d-flex align-items-center">
-                                <i class="fas fa-check-circle text-success fa-2x me-2"></i>
+                                <i class="fas fa-check-circle text-success fa-2x me-3"></i>
                                 <div>
                                     <h6 class="mb-0 fw-bold">Our Mission</h6>
                                     <p class="small mb-0">Restore dignity</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <div class="d-flex align-items-center">
-                                <i class="fas fa-heart text-danger fa-2x me-2"></i>
+                                <i class="fas fa-heart text-danger fa-2x me-3"></i>
                                 <div>
                                     <h6 class="mb-0 fw-bold">Our Vision</h6>
                                     <p class="small mb-0">Every girl thrives</p>
@@ -87,7 +123,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#volunteer" class="btn btn-success mt-3 px-4 py-2 rounded-pill">Get Involved</a>
+                    <a href="#volunteer" class="btn btn-success mt-4 px-5 py-3 rounded-pill">Get Involved</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-image-wrapper">
@@ -98,125 +134,94 @@
         </div>
     </section>
 
-    <!-- ===== STATISTICS ===== -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row g-2 text-center">
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-female text-primary"></i>
-                        <h2>2000+</h2>
-                        <p>Girls Supported</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-school text-success"></i>
-                        <h2>50+</h2>
-                        <p>Schools Reached</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-users text-warning"></i>
-                        <h2>30+</h2>
-                        <p>Volunteers</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-map-pin text-danger"></i>
-                        <h2>100+</h2>
-                        <p>Community Visits</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
+    <!-- ===== PROJECTS SECTION ===== -->
     <section id="projects" class="projects-section">
         <div class="container">
-            <div class="text-center mb-4">
-                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">Our Projects</span>
+            <div class="text-center mb-5">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-pill">Our Projects</span>
                 <h2 class="fw-bold">Changing Lives Through Compassion</h2>
             </div>
-            <div class="row g-3">
+            <div class="row g-4">
+                <!-- Project 1 -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
                             <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop" alt="Reusable Sanitary Towels">
                         </div>
-                        <i class="fas fa-hand-holding-water text-primary"></i>
+                        <i class="fas fa-hand-holding-water"></i>
                         <h4>Reusable Sanitary Towels</h4>
                         <p>Providing sustainable sanitary towels to keep girls in school with dignity.</p>
-                        <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal1">Learn More</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#projectModal1">Learn More</a>
                     </div>
                 </div>
+                <!-- Project 2 -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
                             <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=300&fit=crop" alt="Girls Mentorship">
                         </div>
-                        <i class="fas fa-chalkboard-user text-success"></i>
+                        <i class="fas fa-chalkboard-user"></i>
                         <h4>Girls Mentorship</h4>
                         <p>Building confidence through one-on-one mentoring and life skills training.</p>
-                        <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal2">Learn More</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#projectModal2">Learn More</a>
                     </div>
                 </div>
+                <!-- Project 3 -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
                             <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop" alt="Children's Bible Ministry">
                         </div>
-                        <i class="fas fa-bible text-warning"></i>
+                        <i class="fas fa-bible"></i>
                         <h4>Children's Bible Ministry</h4>
                         <p>Sharing God's love through Bible stories, songs, and faith-based activities.</p>
-                        <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projectModal3">Learn More</a>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#projectModal3">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modals -->
+        <!-- ===== PROJECT MODALS ===== -->
+        <!-- Modal 1 -->
         <div class="modal fade" id="projectModal1" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border-0">
                         <h4 class="fw-bold text-primary">Reusable Sanitary Towels</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=300&fit=crop" class="img-fluid rounded-3" alt="Sanitary Towels">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=400&fit=crop" class="img-fluid rounded-3 mb-4" alt="Sanitary Towels">
                         <h5>Empowering Girls Through Dignity</h5>
-                        <p>Our Reusable Sanitary Towels program provides sustainable menstrual hygiene solutions to girls in underserved communities.</p>
+                        <p>Our Reusable Sanitary Towels program provides sustainable menstrual hygiene solutions to girls in underserved communities. Each girl receives a kit containing:</p>
                         <ul>
                             <li>High-quality reusable pads that last up to 2 years</li>
                             <li>Hygiene education and training</li>
                             <li>Safe disposal and washing facilities</li>
                             <li>Ongoing support and mentorship</li>
                         </ul>
-                        <div class="bg-light p-3 rounded-3 mt-2">
+                        <div class="bg-light p-3 rounded-3 mt-3">
                             <strong>Impact:</strong> 95% of girls improved school attendance.
                         </div>
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#donate" class="btn btn-donate modal-action-btn">Support This Project</a>
+                        <a href="#donate" class="btn btn-success rounded-pill px-4 modal-action-btn">Support This Project</a>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Modal 2 -->
         <div class="modal fade" id="projectModal2" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border-0">
                         <h4 class="fw-bold text-success">Girls Mentorship</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=300&fit=crop" class="img-fluid rounded-3" alt="Mentorship">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&h=400&fit=crop" class="img-fluid rounded-3 mb-4" alt="Mentorship">
                         <h5>Building Tomorrow's Leaders</h5>
                         <p>Our Girls Mentorship program pairs young girls with trained mentors who guide them through life's challenges.</p>
                         <ul>
@@ -225,27 +230,28 @@
                             <li>Life skills training</li>
                             <li>Emotional and spiritual wellness</li>
                         </ul>
-                        <div class="bg-light p-3 rounded-3 mt-2">
+                        <div class="bg-light p-3 rounded-3 mt-3">
                             <strong>Testimonial:</strong> "My mentor believed in me when I didn't believe in myself." - Mary
                         </div>
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#volunteer" class="btn btn-success modal-action-btn">Become a Mentor</a>
+                        <a href="#volunteer" class="btn btn-success rounded-pill px-4 modal-action-btn">Become a Mentor</a>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Modal 3 -->
         <div class="modal fade" id="projectModal3" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border-0">
                         <h4 class="fw-bold text-warning">Children's Bible Ministry</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=300&fit=crop" class="img-fluid rounded-3" alt="Bible Ministry">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&h=400&fit=crop" class="img-fluid rounded-3 mb-4" alt="Bible Ministry">
                         <h5>Sharing God's Love With Children</h5>
                         <p>Our Children's Bible Ministry creates a safe and joyful environment where children learn about God's love.</p>
                         <ul>
@@ -254,29 +260,29 @@
                             <li>Memory verse challenges</li>
                             <li>Prayer and worship sessions</li>
                         </ul>
-                        <div class="bg-light p-3 rounded-3 mt-2">
+                        <div class="bg-light p-3 rounded-3 mt-3">
                             <strong>Impact:</strong> Over 300 children baptized and in local churches.
                         </div>
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#volunteer" class="btn btn-warning text-white modal-action-btn">Join the Ministry</a>
+                        <a href="#volunteer" class="btn btn-warning rounded-pill px-4 text-white modal-action-btn">Join the Ministry</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== EVENTS ===== -->
+    <!-- ===== EVENTS SECTION ===== -->
     <section class="events-section">
         <div class="container">
-            <div class="text-center mb-4">
+            <div class="text-center mb-5">
                 <h2 class="fw-bold">Upcoming Events</h2>
             </div>
-            <div class="row g-3">
+            <div class="row g-4">
                 <div class="col-md-4">
                     <div class="event-card">
-                        <div class="mb-2"><span class="badge bg-primary">15 May</span></div>
+                        <span class="badge">15 May</span>
                         <h5>Sanitary Towel Drive</h5>
                         <p><i class="fas fa-map-pin text-secondary me-2"></i>Kisumu, Kenya</p>
                         <p><i class="far fa-clock text-secondary me-2"></i>10:00 AM - 2:00 PM</p>
@@ -284,7 +290,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="event-card">
-                        <div class="mb-2"><span class="badge bg-primary">22 May</span></div>
+                        <span class="badge">22 May</span>
                         <h5>Mentorship Workshop</h5>
                         <p><i class="fas fa-map-pin text-secondary me-2"></i>Nairobi, Kenya</p>
                         <p><i class="far fa-clock text-secondary me-2"></i>9:00 AM - 1:00 PM</p>
@@ -292,57 +298,54 @@
                 </div>
                 <div class="col-md-4">
                     <div class="event-card">
-                        <div class="mb-2"><span class="badge bg-primary">5 June</span></div>
+                        <span class="badge">5 June</span>
                         <h5>Bible Camp for Kids</h5>
                         <p><i class="fas fa-map-pin text-secondary me-2"></i>Eldoret, Kenya</p>
                         <p><i class="far fa-clock text-secondary me-2"></i>8:00 AM - 4:00 PM</p>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary rounded-pill px-4 py-2">View All Events</a>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary rounded-pill px-5 py-3">View All Events</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== VOLUNTEER ===== -->
+    <!-- ===== VOLUNTEER SECTION ===== -->
     <section id="volunteer" class="volunteer-section">
         <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-7">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
                     <h2 class="fw-bold">Become a Volunteer Today</h2>
                     <p class="lead">Your time and skills can bring hope to a girl. Join our team of passionate volunteers.</p>
-                    <a href="#" class="btn btn-success px-4 py-2 rounded-pill"><i class="fas fa-hands-helping me-2"></i>Join Our Team</a>
-                    <div class="row mt-4 g-3">
-                        <div class="col-4">
+                    <a href="#" class="btn btn-success btn-lg rounded-pill px-5"><i class="fas fa-hands-helping me-2"></i>Join Our Team</a>
+                    <div class="row mt-5 g-4">
+                        <div class="col-md-4">
                             <i class="fas fa-heart text-danger"></i>
                             <h5>Make an Impact</h5>
                         </div>
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <i class="fas fa-star text-warning"></i>
                             <h5>Share Your Skills</h5>
                         </div>
-                        <div class="col-4">
-                            <i class="fas fa-sun text-primary"></i>
+                        <div class="col-md-4">
+                            <i class="fas fa-sun text-success"></i>
                             <h5>Bring Hope</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=400&fit=crop" alt="Volunteer" class="img-fluid rounded-4 shadow-lg">
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== DONATION ===== -->
+    <!-- ===== DONATION SECTION ===== -->
     <section id="donate" class="donation-section">
         <div class="container">
-            <div class="text-center mb-4">
-                <h2 class="fw-bold">Support Our Mission</h2>
-                <p class="lead">Your generosity changes lives. Every contribution counts.</p>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">Support Our Mission</h2>
+                <p class="lead text-white-50">Your generosity changes lives. Every contribution counts.</p>
             </div>
-            <div class="row g-3 justify-content-center">
+            <div class="row g-4 justify-content-center">
                 <div class="col-md-5">
                     <div class="donation-card">
                         <i class="fas fa-mobile-alt text-primary"></i>
@@ -356,43 +359,43 @@
                         <i class="fas fa-university text-primary"></i>
                         <h4>KCB Bank</h4>
                         <p class="fw-bold">AGABHA HOPE LADIES FOUNDATION</p>
-                        <a href="#" class="btn btn-primary mt-2 px-4 py-2 rounded-pill">Donate Now</a>
+                        <a href="#" class="btn btn-primary rounded-pill px-5 mt-3">Donate Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- ===== CONTACT SECTION ===== -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <div class="row g-4">
+            <div class="row g-5">
                 <div class="col-md-5">
                     <h2 class="fw-bold">Get in Touch</h2>
-                    <ul class="list-unstyled mt-3">
-                        <li><i class="fas fa-user-circle text-primary"></i> <strong>Founder:</strong> Hellen Akoyi</li>
-                        <li><i class="fas fa-phone text-primary"></i> 0720445393</li>
-                        <li><i class="fas fa-envelope text-primary"></i> heleatita@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt text-primary"></i> Kenya</li>
+                    <ul class="list-unstyled mt-4">
+                        <li><i class="fas fa-user-circle text-primary me-3"></i> <strong>Founder:</strong> Hellen Akoyi</li>
+                        <li><i class="fas fa-phone text-primary me-3"></i> 0720445393</li>
+                        <li><i class="fas fa-envelope text-primary me-3"></i> heleatita@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt text-primary me-3"></i> Kenya</li>
                     </ul>
                 </div>
                 <div class="col-md-7">
-                    <form class="p-3 bg-light rounded-4">
-                        <div class="row g-2">
-                            <div class="col-6">
-                                <input type="text" class="form-control" placeholder="Your Name">
+                    <form class="p-4 bg-light rounded-4">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-lg" placeholder="Your Name">
                             </div>
-                            <div class="col-6">
-                                <input type="email" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control" placeholder="Subject">
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-lg" placeholder="Email">
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                <input type="text" class="form-control form-control-lg" placeholder="Subject">
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary px-4 py-2 rounded-pill">Send Message</button>
+                                <textarea class="form-control form-control-lg" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -404,12 +407,12 @@
     <!-- ===== FOOTER ===== -->
     <footer class="footer-section">
         <div class="container">
-            <div class="row g-3">
-                <div class="col-6 col-md-3">
+            <div class="row g-4">
+                <div class="col-md-3">
                     <h5>AGABHA HOPE</h5>
-                    <p>Restoring dignity and transforming lives.</p>
+                    <p>Restoring dignity and transforming lives through love and service.</p>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-md-3">
                     <h6>Quick Links</h6>
                     <ul class="list-unstyled">
                         <li><a href="#home">Home</a></li>
@@ -418,7 +421,7 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-md-3">
                     <h6>Contact</h6>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-phone me-2"></i>0720445393</li>
@@ -426,28 +429,27 @@
                         <li><i class="fas fa-map-pin me-2"></i>Kenya</li>
                     </ul>
                 </div>
-                <div class="col-6 col-md-3">
+                <div class="col-md-3">
                     <h6>Social Media</h6>
-                    <div class="d-flex social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
-            <hr class="border-secondary mt-3">
-            <div class="text-center small text-white-50">
-                © 2026 AGABHA HOPE LADIES FOUNDATION
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2026 AGABHA HOPE LADIES FOUNDATION</p>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/script.js"></script>
 
+    <!-- Modal Action Handler -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const actionButtons = document.querySelectorAll('.modal-action-btn');
