@@ -12,64 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .hero-section {
-            transition: background-image 1.5s ease-in-out;
-        }
-        .hero-dots {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-            gap: 10px;
-        }
-        .hero-dots .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            padding: 0;
-        }
-        .hero-dots .dot.active {
-            background: #3C9A40;
-            transform: scale(1.2);
-        }
-        .hero-dots .dot:hover {
-            background: rgba(255,255,255,0.8);
-        }
-        .story-card {
-            background: var(--color-cream);
-            border-radius: var(--radius-sm);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease;
-        }
-        .story-card:hover {
-            transform: translateY(-3px);
-        }
-        .story-card img {
-            border-radius: var(--radius-sm);
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .story-card p {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            font-style: italic;
-            color: var(--color-text);
-        }
-        .story-card .quote-icon {
-            color: var(--color-green);
-            font-size: 1.2rem;
-            opacity: 0.5;
-        }
-    </style>
 </head>
 <body>
 
@@ -162,22 +104,24 @@
                     <h2 class="fw-bold mt-3">Together We Can Make a Difference</h2>
                     <p class="lead">We are dedicated to bringing hope, support, and opportunities to communities in need.</p>
                     <p>AGABHA HOPE LADIES FOUNDATION is a Christian non-profit organization committed to empowering girls and women through education, mentorship, and sustainable development programs.</p>
+                    
+                    <!-- Vision & Mission -->
                     <div class="row mt-4 g-3">
                         <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-eye text-success fa-2x me-3"></i>
                                 <div>
-                                    <h6 class="mb-0 fw-bold">Our Mission</h6>
-                                    <p class="small mb-0">Restore dignity</p>
+                                    <h6 class="mb-0 fw-bold">Our Vision</h6>
+                                    <p class="small mb-0">To build a generation of healthy, confident, and god-fearing girls by meeting their physical, emotional, and spiritual needs.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-heart text-danger fa-2x me-3"></i>
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-bullseye text-danger fa-2x me-3"></i>
                                 <div>
-                                    <h6 class="mb-0 fw-bold">Our Vision</h6>
-                                    <p class="small mb-0">Every girl thrives</p>
+                                    <h6 class="mb-0 fw-bold">Our Mission</h6>
+                                    <p class="small mb-0">To demonstrate the love of Christ by empowering girls through menstrual dignity, mentoring young people, and bringing hope to vulnerable families through compassionate services.</p>
                                 </div>
                             </div>
                         </div>
@@ -249,12 +193,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <!-- Main Image -->
                         <img src="images/Schoolchildren celebrate with donation packages.png" class="img-fluid rounded-3 mb-4" alt="Sanitary Towels Program">
                         <h5>Empowering Girls Through Dignity</h5>
                         <p>Our Reusable Sanitary Towels program provides sustainable menstrual hygiene solutions to girls in underserved communities. Each girl receives a kit containing high-quality reusable pads, hygiene education, and ongoing support.</p>
                         
-                        <!-- Story Images with Descriptions -->
                         <div class="row g-3 mt-3">
                             <div class="col-md-4">
                                 <div class="story-card">
@@ -314,12 +256,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <!-- Main Image -->
                         <img src="images/Community teamwork in a cozy living room.png" class="img-fluid rounded-3 mb-4" alt="Mentorship Program">
                         <h5>Building Tomorrow's Leaders</h5>
                         <p>Our Girls Mentorship program pairs young girls with trained mentors who guide them through life's challenges, building confidence and leadership skills.</p>
                         
-                        <!-- Story Images with Descriptions -->
                         <div class="row g-3 mt-3">
                             <div class="col-md-6">
                                 <div class="story-card">
@@ -728,14 +668,10 @@
 
         // ===== MODAL ACTION HANDLER =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Hero rotation
             createDots();
             setInterval(changeHeroBackground, 5000);
-            
-            // Copy buttons
             setupCopyButtons();
 
-            // Modal action buttons
             const actionButtons = document.querySelectorAll('.modal-action-btn');
             actionButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -767,7 +703,6 @@
                 });
             });
 
-            // Volunteer buttons
             const volunteerBtns = document.querySelectorAll('.volunteer-section .btn-success');
             volunteerBtns.forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -776,7 +711,6 @@
                 });
             });
 
-            // Re-setup copy buttons after modal opens
             const donateModal = document.getElementById('donateModal');
             if (donateModal) {
                 donateModal.addEventListener('shown.bs.modal', function() {
@@ -785,7 +719,6 @@
             }
         });
 
-        // ===== CSS ANIMATION =====
         const styleSheet = document.createElement('style');
         styleSheet.textContent = `
             @keyframes slideUp {
