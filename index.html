@@ -12,6 +12,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-section {
+            transition: background-image 1.5s ease-in-out;
+        }
+        .hero-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+        .hero-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+        .hero-dots .dot.active {
+            background: #3C9A40;
+            transform: scale(1.2);
+        }
+        .hero-dots .dot:hover {
+            background: rgba(255,255,255,0.8);
+        }
+        .story-card {
+            background: var(--color-cream);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: translateY(-3px);
+        }
+        .story-card img {
+            border-radius: var(--radius-sm);
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .story-card p {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: var(--color-text);
+        }
+        .story-card .quote-icon {
+            color: var(--color-green);
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +77,7 @@
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
-                <span class="brand-icon"><i class="fas fa-hands"></i></span>
+                <img src="images/logo.png" alt="AGABHA HOPE Logo" height="40" class="me-2">
                 AGABHA <span class="text-primary">HOPE</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -40,8 +98,8 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section id="home" class="hero-section">
+    <!-- ===== HERO SECTION WITH ROTATING BACKGROUND ===== -->
+    <section id="home" class="hero-section" id="heroSection">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="row align-items-center">
@@ -56,6 +114,7 @@
                 </div>
             </div>
         </div>
+        <div class="hero-dots" id="heroDots"></div>
     </section>
 
     <!-- ===== STATS SECTION ===== -->
@@ -127,7 +186,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-image-wrapper">
-                        <img src="images/about-image.jfif" alt="About AGABHA HOPE" class="img-fluid">
+                        <img src="images/Joyful students celebrating with colorful bundles.png" alt="About AGABHA HOPE" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -142,11 +201,11 @@
                 <h2 class="fw-bold">Changing Lives Through Compassion</h2>
             </div>
             <div class="row g-4">
-                <!-- Project 1 -->
+                <!-- Project 1 - Reusable Sanitary Towels -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
-                            <img src="images/project-1.jfif" alt="Reusable Sanitary Towels">
+                            <img src="images/Schoolchildren celebrate with donation packages.png" alt="Reusable Sanitary Towels">
                         </div>
                         <i class="fas fa-hand-holding-water"></i>
                         <h4>Reusable Sanitary Towels</h4>
@@ -154,11 +213,11 @@
                         <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#projectModal1">Learn More</a>
                     </div>
                 </div>
-                <!-- Project 2 -->
+                <!-- Project 2 - Girls Mentorship -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
-                            <img src="images/project-2.jfif" alt="Girls Mentorship">
+                            <img src="images/Community teamwork in a cozy living room.png" alt="Girls Mentorship">
                         </div>
                         <i class="fas fa-chalkboard-user"></i>
                         <h4>Girls Mentorship</h4>
@@ -166,11 +225,11 @@
                         <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#projectModal2">Learn More</a>
                     </div>
                 </div>
-                <!-- Project 3 -->
+                <!-- Project 3 - Children's Bible Ministry -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
-                            <img src="images/project-3.jfif" alt="Children's Bible Ministry">
+                            <img src="images/kid Focused sewing in a cozy space.png" alt="Children's Bible Ministry">
                         </div>
                         <i class="fas fa-bible"></i>
                         <h4>Children's Bible Ministry</h4>
@@ -181,68 +240,109 @@
             </div>
         </div>
 
-        <!-- ===== PROJECT MODALS ===== -->
-        <!-- Modal 1 -->
+        <!-- ===== PROJECT 1 MODAL ===== -->
         <div class="modal fade" id="projectModal1" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border-0">
                         <h4 class="fw-bold text-primary">Reusable Sanitary Towels</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="images/project-1.jfif" class="img-fluid rounded-3 mb-4" alt="Sanitary Towels">
+                        <!-- Main Image -->
+                        <img src="images/Schoolchildren celebrate with donation packages.png" class="img-fluid rounded-3 mb-4" alt="Sanitary Towels Program">
                         <h5>Empowering Girls Through Dignity</h5>
-                        <p>Our Reusable Sanitary Towels program provides sustainable menstrual hygiene solutions to girls in underserved communities. Each girl receives a kit containing:</p>
-                        <ul>
-                            <li>High-quality reusable pads that last up to 2 years</li>
-                            <li>Hygiene education and training</li>
-                            <li>Safe disposal and washing facilities</li>
-                            <li>Ongoing support and mentorship</li>
-                        </ul>
+                        <p>Our Reusable Sanitary Towels program provides sustainable menstrual hygiene solutions to girls in underserved communities. Each girl receives a kit containing high-quality reusable pads, hygiene education, and ongoing support.</p>
+                        
+                        <!-- Story Images with Descriptions -->
+                        <div class="row g-3 mt-3">
+                            <div class="col-md-4">
+                                <div class="story-card">
+                                    <img src="images/reusable sanitary towel.jpg" alt="Reusable Sanitary Towel">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p>"Each girl receives a high-quality reusable sanitary towel that lasts up to 2 years."</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="story-card">
+                                    <img src="images/fabric materials.jpg" alt="Fabric Materials">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p>"We use soft, durable, and washable fabrics that are comfortable for young girls."</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="story-card">
+                                    <img src="images/woman at sewing machine.jpg" alt="Woman at Sewing Machine">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p>"Our team of skilled women tailors handcraft each towel with love and precision."</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="story-card">
+                                    <img src="images/Sewing session in a bright workshop.png" alt="Sewing Workshop">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p>"The workshop is a place of skill-building, fellowship, and empowerment."</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="story-card">
+                                    <img src="images/Packing fabric in a cozy space.png" alt="Packing Fabric">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p>"Every kit is carefully packaged with care and a prayer before distribution."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="bg-light p-3 rounded-3 mt-3">
-                            <strong>Impact:</strong> 95% of girls improved school attendance.
+                            <strong>Impact:</strong> 95% of girls improved school attendance and confidence.
                         </div>
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#" class="btn btn-success rounded-pill px-4 modal-action-btn" data-bs-toggle="modal" data-bs-target="#donateModal">Support This Project</a>
+                        <a href="#" class="btn btn-success rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#donateModal">Support This Project</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal 2 -->
+        <!-- ===== PROJECT 2 MODAL ===== -->
         <div class="modal fade" id="projectModal2" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border-0">
                         <h4 class="fw-bold text-success">Girls Mentorship</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="images/project-2.jfif" class="img-fluid rounded-3 mb-4" alt="Mentorship">
+                        <!-- Main Image -->
+                        <img src="images/Community teamwork in a cozy living room.png" class="img-fluid rounded-3 mb-4" alt="Mentorship Program">
                         <h5>Building Tomorrow's Leaders</h5>
-                        <p>Our Girls Mentorship program pairs young girls with trained mentors who guide them through life's challenges.</p>
-                        <ul>
-                            <li>Leadership development and confidence</li>
-                            <li>Career guidance and education support</li>
-                            <li>Life skills training</li>
-                            <li>Emotional and spiritual wellness</li>
-                        </ul>
+                        <p>Our Girls Mentorship program pairs young girls with trained mentors who guide them through life's challenges, building confidence and leadership skills.</p>
+                        
+                        <!-- Story Images with Descriptions -->
+                        <div class="row g-3 mt-3">
+                            <div class="col-md-6">
+                                <div class="story-card">
+                                    <img src="images/Cozy crafting session with friends.png" alt="Mentorship Session">
+                                    <i class="fas fa-quote-left quote-icon"></i>
+                                    <p>"In a safe and cozy environment, girls learn life skills and build lasting friendships."</p>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="bg-light p-3 rounded-3 mt-3">
-                            <strong>Testimonial:</strong> "My mentor believed in me when I didn't believe in myself." - Mary
+                            <strong>Testimonial:</strong> "My mentor believed in me when I didn't believe in myself. Now I'm in university studying to become a doctor." - Mary, 19
                         </div>
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#volunteer" class="btn btn-success rounded-pill px-4 modal-action-btn">Become a Mentor</a>
+                        <a href="#volunteer" class="btn btn-success rounded-pill px-4">Become a Mentor</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Modal 3 -->
+        <!-- ===== PROJECT 3 MODAL ===== -->
         <div class="modal fade" id="projectModal3" tabindex="-1">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
@@ -251,9 +351,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <img src="images/project-3.jfif" class="img-fluid rounded-3 mb-4" alt="Bible Ministry">
+                        <img src="images/kid Focused sewing in a cozy space.png" class="img-fluid rounded-3 mb-4" alt="Children's Bible Ministry">
                         <h5>Sharing God's Love With Children</h5>
-                        <p>Our Children's Bible Ministry creates a safe and joyful environment where children learn about God's love.</p>
+                        <p>Our Children's Bible Ministry creates a safe and joyful environment where children learn about God's love through engaging Bible stories, songs, games, and prayer sessions.</p>
                         <ul>
                             <li>Engaging Bible stories and lessons</li>
                             <li>Fun songs, games, and activities</li>
@@ -261,29 +361,14 @@
                             <li>Prayer and worship sessions</li>
                         </ul>
                         <div class="bg-light p-3 rounded-3 mt-3">
-                            <strong>Impact:</strong> Over 300 children baptized and in local churches.
+                            <strong>Impact:</strong> Over 300 children baptized and actively involved in local churches.
                         </div>
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#volunteer" class="btn btn-warning rounded-pill px-4 text-white modal-action-btn">Join the Ministry</a>
+                        <a href="#volunteer" class="btn btn-warning rounded-pill px-4 text-white">Join the Ministry</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== EVENTS SECTION ===== -->
-    <section class="events-section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Upcoming Events</h2>
-            </div>
-            <div class="row g-4" id="eventsContainer">
-                <!-- Events will load here from JavaScript -->
-            </div>
-            <div class="text-center mt-5">
-                <a href="#" class="btn btn-outline-primary rounded-pill px-5 py-3">View All Events</a>
             </div>
         </div>
     </section>
@@ -323,7 +408,6 @@
                 <p class="lead text-white-50">Your generosity changes lives. Every contribution counts.</p>
             </div>
             <div class="row g-4 justify-content-center">
-                <!-- M-Pesa Card -->
                 <div class="col-md-5">
                     <div class="donation-card text-center p-4">
                         <div class="donation-icon-wrapper mb-3">
@@ -352,8 +436,6 @@
                         </button>
                     </div>
                 </div>
-
-                <!-- KCB Bank Card -->
                 <div class="col-md-5">
                     <div class="donation-card text-center p-4">
                         <div class="donation-icon-wrapper mb-3">
@@ -476,9 +558,7 @@
                         <h5 class="mt-3">Thank you for your generosity!</h5>
                         <p class="text-muted">Choose your preferred payment method and copy the details below:</p>
                     </div>
-                    
                     <div class="row g-4">
-                        <!-- M-Pesa in Modal -->
                         <div class="col-md-6">
                             <div class="card h-100 border-success">
                                 <div class="card-body text-center">
@@ -506,8 +586,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- KCB in Modal -->
                         <div class="col-md-6">
                             <div class="card h-100 border-primary">
                                 <div class="card-body text-center">
@@ -544,55 +622,54 @@
     <script src="js/script.js"></script>
 
     <script>
-        // ===== EVENTS DATA =====
-        const eventsData = [
-            { date: "15 May", title: "Sanitary Towel Drive", location: "Kisumu, Kenya", time: "10:00 AM - 2:00 PM" },
-            { date: "22 May", title: "Mentorship Workshop", location: "Nairobi, Kenya", time: "9:00 AM - 1:00 PM" },
-            { date: "5 June", title: "Bible Camp for Kids", location: "Eldoret, Kenya", time: "8:00 AM - 4:00 PM" }
+        // ===== HERO BACKGROUND ROTATION =====
+        const heroImages = [
+            'images/hero-background.jfif',
+            'images/hero-background 1.png'
         ];
+        let currentIndex = 0;
+        const heroSection = document.getElementById('heroSection');
 
-        // ===== LOAD EVENTS =====
-        function loadEvents() {
-            const container = document.getElementById('eventsContainer');
-            if (!container) return;
+        function changeHeroBackground() {
+            currentIndex = (currentIndex + 1) % heroImages.length;
+            heroSection.style.backgroundImage = `url('${heroImages[currentIndex]}')`;
             
-            container.innerHTML = '';
-            eventsData.forEach(event => {
-                const eventHTML = `
-                    <div class="col-md-4">
-                        <div class="event-card">
-                            <span class="badge">${event.date}</span>
-                            <h5>${event.title}</h5>
-                            <p><i class="fas fa-map-pin text-secondary me-2"></i>${event.location}</p>
-                            <p><i class="far fa-clock text-secondary me-2"></i>${event.time}</p>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += eventHTML;
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function createDots() {
+            const dotsContainer = document.getElementById('heroDots');
+            heroImages.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', function() {
+                    currentIndex = index;
+                    heroSection.style.backgroundImage = `url('${heroImages[index]}')`;
+                    document.querySelectorAll('.dot').forEach((d, i) => {
+                        d.classList.toggle('active', i === index);
+                    });
+                });
+                dotsContainer.appendChild(dot);
             });
         }
 
         // ===== COPY TO CLIPBOARD =====
         function copyToClipboard(text, button) {
-            // Create temporary input
             const input = document.createElement('input');
             input.value = text;
             document.body.appendChild(input);
             input.select();
             input.setSelectionRange(0, 99999);
-            
             try {
                 const success = document.execCommand('copy');
                 if (success) {
-                    // Show success feedback
                     const originalHtml = button.innerHTML;
                     button.innerHTML = '<i class="fas fa-check text-success"></i>';
                     button.classList.add('btn-success');
                     button.classList.remove('btn-outline-success', 'btn-outline-primary');
-                    
-                    // Show toast notification
                     showToast('✅ Copied!', '#2E7D32');
-                    
                     setTimeout(() => {
                         button.innerHTML = originalHtml;
                         button.classList.remove('btn-success');
@@ -604,11 +681,9 @@
             } catch (err) {
                 showToast('❌ Failed to copy. Please copy manually.', '#D32F2F');
             }
-            
             document.body.removeChild(input);
         }
 
-        // ===== SHOW TOAST NOTIFICATION =====
         function showToast(message, bgColor) {
             const toast = document.createElement('div');
             toast.textContent = message;
@@ -629,7 +704,6 @@
                 animation: slideUp 0.4s ease;
             `;
             document.body.appendChild(toast);
-            
             setTimeout(() => {
                 toast.style.opacity = '0';
                 toast.style.transition = 'opacity 0.3s ease';
@@ -639,7 +713,6 @@
             }, 2500);
         }
 
-        // ===== SETUP COPY BUTTONS =====
         function setupCopyButtons() {
             document.querySelectorAll('.copy-btn').forEach(button => {
                 button.removeEventListener('click', copyHandler);
@@ -655,20 +728,20 @@
 
         // ===== MODAL ACTION HANDLER =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Load events
-            loadEvents();
+            // Hero rotation
+            createDots();
+            setInterval(changeHeroBackground, 5000);
             
-            // Setup copy buttons
+            // Copy buttons
             setupCopyButtons();
 
-            // Handle modal action buttons
+            // Modal action buttons
             const actionButtons = document.querySelectorAll('.modal-action-btn');
             actionButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     if (this.getAttribute('data-bs-toggle') === 'modal') {
                         return;
                     }
-                    
                     e.preventDefault();
                     const target = this.getAttribute('href');
                     const modal = this.closest('.modal');
@@ -694,24 +767,7 @@
                 });
             });
 
-            // ===== VIEW ALL EVENTS =====
-            const viewAllBtn = document.querySelector('.events-section .btn-outline-primary');
-            if (viewAllBtn) {
-                viewAllBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const eventsSection = document.querySelector('.events-section');
-                    if (eventsSection) {
-                        const navHeight = document.querySelector('.navbar').offsetHeight;
-                        const targetPosition = eventsSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            }
-
-            // ===== VOLUNTEER BUTTONS =====
+            // Volunteer buttons
             const volunteerBtns = document.querySelectorAll('.volunteer-section .btn-success');
             volunteerBtns.forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -720,7 +776,7 @@
                 });
             });
 
-            // ===== RE-SETUP COPY BUTTONS AFTER MODAL OPENS =====
+            // Re-setup copy buttons after modal opens
             const donateModal = document.getElementById('donateModal');
             if (donateModal) {
                 donateModal.addEventListener('shown.bs.modal', function() {
@@ -729,7 +785,7 @@
             }
         });
 
-        // ===== ADD CSS ANIMATION =====
+        // ===== CSS ANIMATION =====
         const styleSheet = document.createElement('style');
         styleSheet.textContent = `
             @keyframes slideUp {
