@@ -12,6 +12,167 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-section {
+            transition: background-image 1.5s ease-in-out;
+        }
+        .hero-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+        .hero-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+        .hero-dots .dot.active {
+            background: #3C9A40;
+            transform: scale(1.2);
+        }
+        .hero-dots .dot:hover {
+            background: rgba(255,255,255,0.8);
+        }
+        .story-card {
+            background: var(--color-cream);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: translateY(-3px);
+        }
+        .story-card img {
+            border-radius: var(--radius-sm);
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .story-card p {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: var(--color-text);
+        }
+        .story-card .quote-icon {
+            color: var(--color-green);
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
+
+        /* Volunteer Modal Styles */
+        .volunteer-modal-content {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
+        .volunteer-modal-header {
+            background: linear-gradient(135deg, #14284B, #1D3A66);
+            padding: 30px 30px 20px;
+            text-align: center;
+            border-bottom: none;
+        }
+        .volunteer-modal-header .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .volunteer-modal-header h4 {
+            color: #fff;
+            font-weight: 700;
+        }
+        .volunteer-modal-header p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0;
+        }
+        .volunteer-modal-body {
+            padding: 30px;
+            text-align: center;
+        }
+        .volunteer-modal-body .contact-item {
+            background: var(--color-cream);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.2s ease;
+        }
+        .volunteer-modal-body .contact-item:hover {
+            transform: translateX(5px);
+        }
+        .volunteer-modal-body .contact-item i {
+            font-size: 1.5rem;
+            color: var(--color-green);
+            width: 40px;
+            text-align: center;
+        }
+        .volunteer-modal-body .contact-item .info {
+            text-align: left;
+        }
+        .volunteer-modal-body .contact-item .info strong {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+        .volunteer-modal-body .contact-item .info span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+        .volunteer-modal-footer {
+            padding: 20px 30px 30px;
+            border-top: none;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-volunteer-close {
+            background: var(--color-navy);
+            color: #fff;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-volunteer-close:hover {
+            background: var(--color-navy-light);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .btn-volunteer-copy {
+            background: var(--color-green);
+            color: #fff;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-volunteer-copy:hover {
+            background: var(--color-green-dark);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 
@@ -40,7 +201,7 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION WITH ROTATING BACKGROUND ===== -->
+    <!-- ===== HERO SECTION ===== -->
     <section id="home" class="hero-section" id="heroSection">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
@@ -104,8 +265,6 @@
                     <h2 class="fw-bold mt-3">Together We Can Make a Difference</h2>
                     <p class="lead">We are dedicated to bringing hope, support, and opportunities to communities in need.</p>
                     <p>AGABHA HOPE LADIES FOUNDATION is a Christian non-profit organization committed to empowering girls and women through education, mentorship, and sustainable development programs.</p>
-                    
-                    <!-- Vision & Mission -->
                     <div class="row mt-4 g-3">
                         <div class="col-md-6">
                             <div class="d-flex align-items-start">
@@ -145,7 +304,6 @@
                 <h2 class="fw-bold">Changing Lives Through Compassion</h2>
             </div>
             <div class="row g-4">
-                <!-- Project 1 - Reusable Sanitary Towels -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
@@ -157,7 +315,6 @@
                         <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#projectModal1">Learn More</a>
                     </div>
                 </div>
-                <!-- Project 2 - Girls Mentorship -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
@@ -169,7 +326,6 @@
                         <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#projectModal2">Learn More</a>
                     </div>
                 </div>
-                <!-- Project 3 - Children's Bible Ministry -->
                 <div class="col-md-4">
                     <div class="project-card text-center">
                         <div class="project-img-wrapper">
@@ -196,7 +352,6 @@
                         <img src="images/Schoolchildren celebrate with donation packages.png" class="img-fluid rounded-3 mb-4" alt="Sanitary Towels Program">
                         <h5>Empowering Girls Through Dignity</h5>
                         <p>Our Reusable Sanitary Towels program provides sustainable menstrual hygiene solutions to girls in underserved communities. Each girl receives a kit containing high-quality reusable pads, hygiene education, and ongoing support.</p>
-                        
                         <div class="row g-3 mt-3">
                             <div class="col-md-4">
                                 <div class="story-card">
@@ -234,7 +389,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="bg-light p-3 rounded-3 mt-3">
                             <strong>Impact:</strong> 95% of girls improved school attendance and confidence.
                         </div>
@@ -259,7 +413,6 @@
                         <img src="images/Community teamwork in a cozy living room.png" class="img-fluid rounded-3 mb-4" alt="Mentorship Program">
                         <h5>Building Tomorrow's Leaders</h5>
                         <p>Our Girls Mentorship program pairs young girls with trained mentors who guide them through life's challenges, building confidence and leadership skills.</p>
-                        
                         <div class="row g-3 mt-3">
                             <div class="col-md-6">
                                 <div class="story-card">
@@ -269,7 +422,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="bg-light p-3 rounded-3 mt-3">
                             <strong>Testimonial:</strong> "My mentor believed in me when I didn't believe in myself. Now I'm in university studying to become a doctor." - Mary, 19
                         </div>
@@ -320,7 +472,7 @@
                 <div class="col-lg-8">
                     <h2 class="fw-bold">Become a Volunteer Today</h2>
                     <p class="lead">Your time and skills can bring hope to a girl. Join our team of passionate volunteers.</p>
-                    <a href="#" class="btn btn-success btn-lg rounded-pill px-5"><i class="fas fa-hands-helping me-2"></i>Join Our Team</a>
+                    <a href="#" class="btn btn-success btn-lg rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#volunteerModal"><i class="fas fa-hands-helping me-2"></i>Join Our Team</a>
                     <div class="row mt-5 g-4">
                         <div class="col-md-4">
                             <i class="fas fa-heart text-danger"></i>
@@ -339,6 +491,56 @@
             </div>
         </div>
     </section>
+
+    <!-- ===== VOLUNTEER MODAL (Stylish Popup) ===== -->
+    <div class="modal fade" id="volunteerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content volunteer-modal-content">
+                <div class="volunteer-modal-header">
+                    <div class="icon-circle">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4>🙏 Thank You for Your Interest!</h4>
+                    <p>We're excited to have you on board. Here's how to reach us:</p>
+                </div>
+                <div class="volunteer-modal-body">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="info">
+                            <strong>Call Us</strong>
+                            <span>0720445393</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <strong>Email Us</strong>
+                            <span>heleatita@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info">
+                            <strong>Location</strong>
+                            <span>Kenya</span>
+                        </div>
+                    </div>
+                    <p class="text-muted mt-3" style="font-size: 0.9rem;">
+                        <i class="fas fa-heart text-danger me-1"></i>
+                        We'll get back to you with more information within 24 hours.
+                    </p>
+                </div>
+                <div class="volunteer-modal-footer">
+                    <button class="btn-volunteer-close" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Close
+                    </button>
+                    <button class="btn-volunteer-copy" onclick="copyVolunteerInfo()">
+                        <i class="fas fa-copy me-2"></i>Copy Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== DONATION SECTION ===== -->
     <section id="donate" class="donation-section">
@@ -666,6 +868,23 @@
             copyToClipboard(text, this);
         }
 
+        // ===== COPY VOLUNTEER INFO =====
+        function copyVolunteerInfo() {
+            const info = `📞 Call us: 0720445393\n📧 Email: heleatita@gmail.com\n📍 Location: Kenya`;
+            const input = document.createElement('input');
+            input.value = info;
+            document.body.appendChild(input);
+            input.select();
+            input.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                showToast('✅ Volunteer details copied!', '#2E7D32');
+            } catch (err) {
+                showToast('❌ Failed to copy. Please copy manually.', '#D32F2F');
+            }
+            document.body.removeChild(input);
+        }
+
         // ===== MODAL ACTION HANDLER =====
         document.addEventListener('DOMContentLoaded', function() {
             createDots();
@@ -700,14 +919,6 @@
                             }
                         }
                     }, 300);
-                });
-            });
-
-            const volunteerBtns = document.querySelectorAll('.volunteer-section .btn-success');
-            volunteerBtns.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    alert('🙏 Thank you for your interest in volunteering!\n\n📞 Call us: 0720445393\n📧 Email: heleatita@gmail.com\n\nWe\'ll get back to you with more information.');
                 });
             });
 
