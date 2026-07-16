@@ -69,94 +69,6 @@
             font-size: 1.2rem;
             opacity: 0.5;
         }
-
-        /* Volunteer Modal Styles */
-        .volunteer-modal-content {
-            border-radius: 20px;
-            border: none;
-            overflow: hidden;
-        }
-        .volunteer-modal-header {
-            background: linear-gradient(135deg, #14284B, #1D3A66);
-            padding: 30px 30px 20px;
-            text-align: center;
-            border-bottom: none;
-        }
-        .volunteer-modal-header .icon-circle {
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-        .volunteer-modal-header h4 {
-            color: #fff;
-            font-weight: 700;
-        }
-        .volunteer-modal-header p {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 0;
-        }
-        .volunteer-modal-body {
-            padding: 30px;
-            text-align: center;
-        }
-        .volunteer-modal-body .contact-item {
-            background: var(--color-cream);
-            border-radius: 12px;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: transform 0.2s ease;
-        }
-        .volunteer-modal-body .contact-item:hover {
-            transform: translateX(5px);
-        }
-        .volunteer-modal-body .contact-item i {
-            font-size: 1.5rem;
-            color: var(--color-green);
-            width: 40px;
-            text-align: center;
-        }
-        .volunteer-modal-body .contact-item .info {
-            text-align: left;
-        }
-        .volunteer-modal-body .contact-item .info strong {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--color-text-muted);
-        }
-        .volunteer-modal-body .contact-item .info span {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--color-navy);
-        }
-        .volunteer-modal-footer {
-            padding: 20px 30px 30px;
-            border-top: none;
-            justify-content: center;
-        }
-        .btn-volunteer-close {
-            background: var(--color-navy);
-            color: #fff;
-            border: none;
-            padding: 10px 50px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-volunteer-close:hover {
-            background: var(--color-navy-light);
-            transform: translateY(-2px);
-            color: #fff;
-        }
     </style>
 </head>
 <body>
@@ -413,7 +325,7 @@
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#volunteer" class="btn btn-success rounded-pill px-4">Become a Mentor</a>
+                        <a href="#contact" class="btn btn-success rounded-pill px-4">Become a Mentor</a>
                     </div>
                 </div>
             </div>
@@ -443,7 +355,7 @@
                     </div>
                     <div class="modal-footer border-0">
                         <button class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
-                        <a href="#volunteer" class="btn btn-warning rounded-pill px-4 text-white">Join the Ministry</a>
+                        <a href="#contact" class="btn btn-warning rounded-pill px-4 text-white">Join the Ministry</a>
                     </div>
                 </div>
             </div>
@@ -457,7 +369,7 @@
                 <div class="col-lg-8">
                     <h2 class="fw-bold">Become a Volunteer Today</h2>
                     <p class="lead">Your time and skills can bring hope to a girl. Join our team of passionate volunteers.</p>
-                    <a href="#" class="btn btn-success btn-lg rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#volunteerModal"><i class="fas fa-hands-helping me-2"></i>Join Our Team</a>
+                    <a href="#contact" class="btn btn-success btn-lg rounded-pill px-5"><i class="fas fa-hands-helping me-2"></i>Join Our Team</a>
                     <div class="row mt-5 g-4">
                         <div class="col-md-4">
                             <i class="fas fa-heart text-danger"></i>
@@ -476,53 +388,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ===== VOLUNTEER MODAL (No Copy Button) ===== -->
-    <div class="modal fade" id="volunteerModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content volunteer-modal-content">
-                <div class="volunteer-modal-header">
-                    <div class="icon-circle">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h4>🙏 Thank You for Your Interest!</h4>
-                    <p>We're excited to have you on board. Here's how to reach us:</p>
-                </div>
-                <div class="volunteer-modal-body">
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="info">
-                            <strong>Call Us</strong>
-                            <span>0720445393</span>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info">
-                            <strong>Email Us</strong>
-                            <span>heleatita@gmail.com</span>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="info">
-                            <strong>Location</strong>
-                            <span>Kenya</span>
-                        </div>
-                    </div>
-                    <p class="text-muted mt-3" style="font-size: 0.9rem;">
-                        <i class="fas fa-heart text-danger me-1"></i>
-                        We'll get back to you with more information within 24 hours.
-                    </p>
-                </div>
-                <div class="volunteer-modal-footer">
-                    <button class="btn-volunteer-close" data-bs-dismiss="modal">
-                        <i class="fas fa-times me-2"></i>Close
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ===== DONATION SECTION ===== -->
     <section id="donate" class="donation-section">
@@ -855,37 +720,6 @@
             createDots();
             setInterval(changeHeroBackground, 5000);
             setupCopyButtons();
-
-            const actionButtons = document.querySelectorAll('.modal-action-btn');
-            actionButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    if (this.getAttribute('data-bs-toggle') === 'modal') {
-                        return;
-                    }
-                    e.preventDefault();
-                    const target = this.getAttribute('href');
-                    const modal = this.closest('.modal');
-                    if (modal) {
-                        const modalInstance = bootstrap.Modal.getInstance(modal);
-                        if (modalInstance) {
-                            modalInstance.hide();
-                        }
-                    }
-                    setTimeout(function() {
-                        if (target && target.startsWith('#')) {
-                            const targetElement = document.querySelector(target);
-                            if (targetElement) {
-                                const navHeight = document.querySelector('.navbar').offsetHeight;
-                                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                                window.scrollTo({
-                                    top: targetPosition,
-                                    behavior: 'smooth'
-                                });
-                            }
-                        }
-                    }, 300);
-                });
-            });
 
             const donateModal = document.getElementById('donateModal');
             if (donateModal) {

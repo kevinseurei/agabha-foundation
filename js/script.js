@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     const navbarCollapse = document.querySelector('.navbar-collapse');
 
-    // Smooth scroll for nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -22,13 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    // Close mobile menu
                     if (navbarCollapse && navbarCollapse.classList.contains('show')) {
                         const bsCollapse = new bootstrap.Collapse(navbarCollapse);
                         bsCollapse.hide();
                     }
 
-                    // Smooth scroll
                     const navHeight = navbar ? navbar.offsetHeight : 0;
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
 
     window.addEventListener('scroll', function() {
@@ -65,47 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =========================================================
-    // 2. MODAL ACTION BUTTONS
-    // =========================================================
-    function setupModalActions() {
-        const actionButtons = document.querySelectorAll('.modal-action-btn');
-
-        actionButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.getAttribute('data-bs-toggle') === 'modal') {
-                    return;
-                }
-
-                e.preventDefault();
-                const target = this.getAttribute('href');
-                const modal = this.closest('.modal');
-
-                if (modal) {
-                    const modalInstance = bootstrap.Modal.getInstance(modal);
-                    if (modalInstance) {
-                        modalInstance.hide();
-                    }
-                }
-
-                setTimeout(function() {
-                    if (target && target.startsWith('#')) {
-                        const targetElement = document.querySelector(target);
-                        if (targetElement) {
-                            const navHeight = navbar ? navbar.offsetHeight : 0;
-                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                }, 300);
-            });
-        });
-    }
-
-    // =========================================================
-    // 3. CONTACT FORM
+    // 2. CONTACT FORM
     // =========================================================
     function setupContactForm() {
         const contactForm = document.getElementById('contactForm');
@@ -122,26 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // =========================================================
-    // 4. DONATION BUTTONS — open modal
-    // =========================================================
-    function setupDonationButtons() {
-        const donateButtons = document.querySelectorAll('[data-bs-target="#donateModal"]');
-
-        donateButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                console.log('Donation modal opened');
-            });
-        });
-    }
-
-    // =========================================================
-    // 5. INITIALIZE EVERYTHING
-    // =========================================================
-
-    setupModalActions();
     setupContactForm();
-    setupDonationButtons();
 
     console.log('✅ AGABHA HOPE LADIES FOUNDATION — site loaded successfully!');
 });
