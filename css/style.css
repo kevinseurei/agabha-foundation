@@ -128,16 +128,10 @@ a { text-decoration: none; }
   gap: 0.5rem;
 }
 
-.brand-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--color-green);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar-nav .nav-link {
@@ -172,6 +166,7 @@ a { text-decoration: none; }
   min-height: 480px;
   display: flex;
   align-items: center;
+  transition: background-image 1.5s ease-in-out;
 }
 
 .hero-overlay {
@@ -208,6 +203,35 @@ a { text-decoration: none; }
   font-size: 1.05rem;
   max-width: 520px;
   margin-bottom: 1.75rem;
+}
+
+/* Hero dots for image rotation */
+.hero-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+.hero-dots .dot.active {
+  background: var(--color-green);
+  transform: scale(1.2);
+}
+.hero-dots .dot:hover {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 /* ---------- Stats (floating card over hero) ---------- */
@@ -257,6 +281,8 @@ a { text-decoration: none; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   width: 100%;
+  height: 400px;
+  object-fit: cover;
 }
 
 /* ---------- Projects / Programs ---------- */
@@ -320,6 +346,36 @@ a { text-decoration: none; }
   margin-top: 0.5rem;
 }
 
+/* ---------- Story Cards in Modals ---------- */
+.story-card {
+  background: var(--color-cream);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.story-card:hover {
+  transform: translateY(-3px);
+}
+.story-card img {
+  border-radius: var(--radius-sm);
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.story-card p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: var(--color-text);
+}
+.story-card .quote-icon {
+  color: var(--color-green);
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+/* ---------- Modal ---------- */
 .modal-content {
   border-radius: var(--radius-md);
   border: none;
@@ -330,40 +386,12 @@ a { text-decoration: none; }
   object-fit: cover;
 }
 
-/* ---------- Events ---------- */
-.events-section {
-  padding: 3rem 0;
-  background: #fff;
-}
-
-.event-card {
-  background: var(--color-cream);
-  border-left: 4px solid var(--color-green);
-  border-radius: var(--radius-sm);
-  padding: 1.5rem;
-  height: 100%;
-  transition: transform 0.2s ease;
-}
-
-.event-card:hover { transform: translateY(-4px); }
-
-.event-card .badge {
-  background: var(--color-navy) !important;
-  font-family: var(--font-display);
-  font-weight: 600;
-  border-radius: 50px;
-  padding: 0.4rem 0.9rem;
-}
-
-.event-card h5 { margin: 0.75rem 0 0.5rem; }
-.event-card p { font-size: 0.9rem; margin-bottom: 0.25rem; }
-
 /* ---------- Volunteer CTA ---------- */
 .volunteer-section {
   position: relative;
   padding: 4rem 0;
-  background: linear-gradient(120deg, rgba(20,40,75,0.93), rgba(20,40,75,0.8)),
-              url('../images/volunteer-bg.jfif') center/cover no-repeat;
+  background: linear-gradient(120deg, rgba(20, 40, 75, 0.93), rgba(20, 40, 75, 0.8)),
+              url('../images/community gathering.jpg') center/cover no-repeat;
 }
 
 .volunteer-section h2,
@@ -560,6 +588,20 @@ a { text-decoration: none; }
 }
 
 /* =========================================================
+   TOAST / COPY NOTIFICATION
+   ========================================================= */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* =========================================================
    Responsive — mobile fixes
    ========================================================= */
 @media (max-width: 991.98px) {
@@ -588,7 +630,6 @@ a { text-decoration: none; }
 
   .about-section,
   .projects-section,
-  .events-section,
   .volunteer-section,
   .donation-section,
   .contact-section {
@@ -596,41 +637,49 @@ a { text-decoration: none; }
     text-align: center;
   }
 
+  .about-image-wrapper img {
+    height: 250px;
+  }
+
   .volunteer-section .row.mt-4 .col-4 {
     margin-bottom: 1rem;
   }
 
   .contact-section .col-6 { width: 100%; }
-  
+
   /* Donation mobile fixes */
   .donation-icon-wrapper {
     width: 80px;
     height: 80px;
   }
-  
+
   .donation-logo {
     max-width: 60px;
     max-height: 50px;
   }
-  
+
   .donation-card .fs-2 {
     font-size: 1.8rem !important;
   }
-  
+
   .donation-card .fs-4 {
     font-size: 1.2rem !important;
   }
-  
+
   .copy-container .fs-3 {
     font-size: 1.5rem !important;
   }
-  
+
   .copy-container .fs-4 {
     font-size: 1.2rem !important;
   }
-  
+
   #donateModal .col-md-6 {
     margin-bottom: 1rem;
+  }
+
+  .story-card img {
+    height: 140px;
   }
 }
 
@@ -639,39 +688,32 @@ a { text-decoration: none; }
   .hero-text p { font-size: 0.9rem; }
   .stats-section .row > div { margin-bottom: 1rem; }
   .stats-section .row > div:last-child { margin-bottom: 0; }
-  
+
   .project-img-wrapper {
     height: 150px;
   }
-  
+
   .project-card h4 {
     font-size: 1rem;
   }
-  
+
   .project-card p {
     font-size: 0.8rem;
   }
-  
-  .event-card {
-    padding: 1rem;
-  }
-  
+
   .donation-card {
     padding: 1.5rem;
   }
-  
+
   .footer-section .row > div {
     margin-bottom: 1.5rem;
   }
-  /* ===== COPY TOAST ANIMATION ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
+
+  .about-image-wrapper img {
+    height: 200px;
+  }
+
+  .story-card img {
+    height: 120px;
+  }
 }
