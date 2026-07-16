@@ -142,33 +142,18 @@
             padding: 20px 30px 30px;
             border-top: none;
             justify-content: center;
-            gap: 10px;
         }
         .btn-volunteer-close {
             background: var(--color-navy);
             color: #fff;
             border: none;
-            padding: 10px 40px;
+            padding: 10px 50px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
         .btn-volunteer-close:hover {
             background: var(--color-navy-light);
-            transform: translateY(-2px);
-            color: #fff;
-        }
-        .btn-volunteer-copy {
-            background: var(--color-green);
-            color: #fff;
-            border: none;
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-volunteer-copy:hover {
-            background: var(--color-green-dark);
             transform: translateY(-2px);
             color: #fff;
         }
@@ -492,7 +477,7 @@
         </div>
     </section>
 
-    <!-- ===== VOLUNTEER MODAL (Stylish Popup) ===== -->
+    <!-- ===== VOLUNTEER MODAL (No Copy Button) ===== -->
     <div class="modal fade" id="volunteerModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content volunteer-modal-content">
@@ -533,9 +518,6 @@
                 <div class="volunteer-modal-footer">
                     <button class="btn-volunteer-close" data-bs-dismiss="modal">
                         <i class="fas fa-times me-2"></i>Close
-                    </button>
-                    <button class="btn-volunteer-copy" onclick="copyVolunteerInfo()">
-                        <i class="fas fa-copy me-2"></i>Copy Details
                     </button>
                 </div>
             </div>
@@ -866,23 +848,6 @@
             e.preventDefault();
             const text = this.getAttribute('data-copy');
             copyToClipboard(text, this);
-        }
-
-        // ===== COPY VOLUNTEER INFO =====
-        function copyVolunteerInfo() {
-            const info = `📞 Call us: 0720445393\n📧 Email: heleatita@gmail.com\n📍 Location: Kenya`;
-            const input = document.createElement('input');
-            input.value = info;
-            document.body.appendChild(input);
-            input.select();
-            input.setSelectionRange(0, 99999);
-            try {
-                document.execCommand('copy');
-                showToast('✅ Volunteer details copied!', '#2E7D32');
-            } catch (err) {
-                showToast('❌ Failed to copy. Please copy manually.', '#D32F2F');
-            }
-            document.body.removeChild(input);
         }
 
         // ===== MODAL ACTION HANDLER =====
